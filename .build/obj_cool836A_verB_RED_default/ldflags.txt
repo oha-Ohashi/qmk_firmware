@@ -1,0 +1,1 @@
+-Wl,--gc-sections -Wl,-Map=.build/cool836A_verB_RED_default.map,--cref     -lm 

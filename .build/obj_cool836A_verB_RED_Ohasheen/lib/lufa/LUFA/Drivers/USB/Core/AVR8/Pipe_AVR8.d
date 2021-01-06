@@ -1,0 +1,45 @@
+.build/obj_cool836A_verB_RED_Ohasheen/lib/lufa/LUFA/Drivers/USB/Core/AVR8/Pipe_AVR8.o: \
+ lib/lufa/LUFA/Drivers/USB/Core/AVR8/Pipe_AVR8.c \
+ keyboards/cool836A/config.h quantum/config_common.h \
+ quantum/audio/song_list.h quantum/audio/musical_notes.h \
+ keyboards/cool836A/verB_RED/config.h \
+ keyboards/cool836A/keymaps/Ohasheen/config.h \
+ lib/lufa/LUFA/Drivers/USB/Core/AVR8/../../../../Common/Common.h \
+ lib/lufa/LUFA/Drivers/USB/Core/AVR8/../../../../Common/Architectures.h \
+ lib/lufa/LUFA/Drivers/USB/Core/AVR8/../../../../Common/BoardTypes.h \
+ lib/lufa/LUFA/Drivers/USB/Core/AVR8/../../../../Common/ArchitectureSpecific.h \
+ lib/lufa/LUFA/Drivers/USB/Core/AVR8/../../../../Common/CompilerSpecific.h \
+ lib/lufa/LUFA/Drivers/USB/Core/AVR8/../../../../Common/Attributes.h \
+ lib/lufa/LUFA/Drivers/USB/Core/AVR8/../../../../Common/Endianness.h \
+ lib/lufa/LUFA/Drivers/USB/Core/AVR8/../USBMode.h \
+ lib/lufa/LUFA/Drivers/USB/Core/AVR8/../../../../Common/Common.h
+
+keyboards/cool836A/config.h:
+
+quantum/config_common.h:
+
+quantum/audio/song_list.h:
+
+quantum/audio/musical_notes.h:
+
+keyboards/cool836A/verB_RED/config.h:
+
+keyboards/cool836A/keymaps/Ohasheen/config.h:
+
+lib/lufa/LUFA/Drivers/USB/Core/AVR8/../../../../Common/Common.h:
+
+lib/lufa/LUFA/Drivers/USB/Core/AVR8/../../../../Common/Architectures.h:
+
+lib/lufa/LUFA/Drivers/USB/Core/AVR8/../../../../Common/BoardTypes.h:
+
+lib/lufa/LUFA/Drivers/USB/Core/AVR8/../../../../Common/ArchitectureSpecific.h:
+
+lib/lufa/LUFA/Drivers/USB/Core/AVR8/../../../../Common/CompilerSpecific.h:
+
+lib/lufa/LUFA/Drivers/USB/Core/AVR8/../../../../Common/Attributes.h:
+
+lib/lufa/LUFA/Drivers/USB/Core/AVR8/../../../../Common/Endianness.h:
+
+lib/lufa/LUFA/Drivers/USB/Core/AVR8/../USBMode.h:
+
+lib/lufa/LUFA/Drivers/USB/Core/AVR8/../../../../Common/Common.h:

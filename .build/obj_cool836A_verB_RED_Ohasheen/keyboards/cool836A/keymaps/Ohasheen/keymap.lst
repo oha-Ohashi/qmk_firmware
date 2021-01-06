@@ -1,0 +1,482 @@
+   1               		.file	"keymap.c"
+   2               	__SP_H__ = 0x3e
+   3               	__SP_L__ = 0x3d
+   4               	__SREG__ = 0x3f
+   5               	__tmp_reg__ = 0
+   6               	__zero_reg__ = 1
+   7               		.text
+   8               	.Ltext0:
+   9               		.cfi_sections	.debug_frame
+  10               		.section	.text.process_record_user,"ax",@progbits
+  11               	.global	process_record_user
+  13               	process_record_user:
+  14               	.LFB24:
+  15               		.file 1 "keyboards/cool836A/keymaps/Ohasheen/keymap.c"
+   1:keyboards/cool836A/keymaps/Ohasheen/keymap.c **** /* Copyright 2021 Ohashi
+   2:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****  *
+   3:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****  * This program is free software: you can redistribute it and/or modify
+   4:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****  * it under the terms of the GNU General Public License as published by
+   5:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****  * the Free Software Foundation, either version 2 of the License, or
+   6:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****  * (at your option) any later version.
+   7:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****  *
+   8:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****  * This program is distributed in the hope that it will be useful,
+   9:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  10:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  11:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****  * GNU General Public License for more details.
+  12:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****  *
+  13:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****  * You should have received a copy of the GNU General Public License
+  14:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  15:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****  */
+  16:keyboards/cool836A/keymaps/Ohasheen/keymap.c **** #include QMK_KEYBOARD_H
+  17:keyboards/cool836A/keymaps/Ohasheen/keymap.c **** 
+  18:keyboards/cool836A/keymaps/Ohasheen/keymap.c **** // Defines names for use in layer keycodes and the keymap
+  19:keyboards/cool836A/keymaps/Ohasheen/keymap.c **** enum layer_names {
+  20:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****     _Ohasheen,
+  21:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****     _N,         //Mumbers Layer
+  22:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****     _F,         //Function Keys Layer
+  23:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****     _C,         //Corsur Layer
+  24:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****     _M,         //Marks Layer
+  25:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****     _MS1,       //Mouse Controlling Layer
+  26:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****     _NULL       //Empty Leyer for creating new one
+  27:keyboards/cool836A/keymaps/Ohasheen/keymap.c **** };
+  28:keyboards/cool836A/keymaps/Ohasheen/keymap.c **** 
+  29:keyboards/cool836A/keymaps/Ohasheen/keymap.c **** // Defines the keycodes used by our macros in process_record_user
+  30:keyboards/cool836A/keymaps/Ohasheen/keymap.c **** enum custom_keycodes {
+  31:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****     QMKBEST = SAFE_RANGE,
+  32:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****     QMKURL
+  33:keyboards/cool836A/keymaps/Ohasheen/keymap.c **** };
+  34:keyboards/cool836A/keymaps/Ohasheen/keymap.c **** 
+  35:keyboards/cool836A/keymaps/Ohasheen/keymap.c **** const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+  36:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****     [_Ohasheen] = LAYOUT(
+  37:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****         LT(_C, KC_TAB), KC_Q,           KC_W,        KC_COMM,     KC_DOT,        KC_B,  \
+  38:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****         KC_LCTL,        KC_A,          KC_O,        KC_E,         LT(_C, KC_U), KC_I, \
+  39:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****         LSFT_T(KC_ESC), LT(_MS1, KC_Z), GUI_T(KC_X), LALT_T(KC_C), LT(_N, KC_V), LSFT_T(KC_SPC), \
+  40:keyboards/cool836A/keymaps/Ohasheen/keymap.c **** 
+  41:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****                          KC_M,   KC_R,          KC_D, KC_Y, KC_P, LT(_MS1, KC_BSPC), \
+  42:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****                          KC_G,   LT(_C, KC_T),  KC_K, KC_N, KC_S, KC_MINS, \
+  43:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****         LT(_F, KC_ENTER), LT(_M, KC_F),         KC_H, KC_J, KC_L, LT(_C, KC_ENT)
+  44:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****     ),
+  45:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****     //number
+  46:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****     [_N] = LAYOUT(
+  47:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****         KC_GRAVE, KC_1,    KC_2,    KC_3,    KC_4,   KC_5,\
+  48:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****         _______,  KC_LPRN, KC_RPRN, KC_LBRC, KC_RBRC,  KC_SCLN,\
+  49:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****         _______,  KC_LCBR, KC_RCBR, KC_DQUO, _______, KC_QUOT, \
+  50:keyboards/cool836A/keymaps/Ohasheen/keymap.c **** 
+  51:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****         KC_6,    KC_7,     KC_8,    KC_9,    KC_0,   KC_DEL,\
+  52:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****         KC_PLUS, KC_MINS, KC_ASTR, KC_SLSH, KC_EQL,  _______,\
+  53:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****         _______, _______, _______, _______, _______, _______
+  54:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****     ),
+  55:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****     //function
+  56:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****     [_F] = LAYOUT(
+  57:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****         _______, KC_F1,   KC_F2,   KC_F3,    KC_F4,   KC_F5,\
+  58:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****         _______, KC_F6,   KC_F7,   KC_F8,    KC_F9,   KC_F10,\
+  59:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****         _______, KC_F11,  KC_F12, KC_CIRC, KC_TILD, _______,\
+  60:keyboards/cool836A/keymaps/Ohasheen/keymap.c **** 
+  61:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****         _______, _______, _______, _______, _______,   KC_DEL,\
+  62:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****         KC_MUTE, KC_HOME, KC_END,  KC_PGUP, KC_PGDOWN, _______, \
+  63:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****         _______, _______, _______, _______, _______,   RESET 
+  64:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****     ),
+  65:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****     //Mark
+  66:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****     [_M] = LAYOUT(
+  67:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****         KC_GRAVE, KC_EXLM, KC_AT,  KC_HASH, KC_DLR,  KC_PERC, \
+  68:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****         _______,  KC_CIRC,  KC_DLR, KC_BSLS, KC_AMPR, KC_PIPE, \
+  69:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****         _______,  _______, _______, _______, _______, _______, \
+  70:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****         
+  71:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****         _______, KC_COLN, KC_ASTR, KC_SLSH, KC_TILD, KC_DEL, \
+  72:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****         KC_UNDS, KC_SCLN, KC_EXLM, KC_QUES, KC_EQL,  _______,\
+  73:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****         KC_MPLY, _______, KC_VOLD, KC_VOLU, KC_MPRV,   KC_MNXT
+  74:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****     ),  
+  75:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****     //cursor
+  76:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****     [_C] = LAYOUT(
+  77:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****         _______, KC_PSCR, KC_INS,  _______, _______, _______, \
+  78:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****         _______, _______, _______, _______, KC_INT5, _______,\
+  79:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****         _______, _______, _______, _______, KC_INT5, _______,\
+  80:keyboards/cool836A/keymaps/Ohasheen/keymap.c **** 
+  81:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****         _______, _______, _______, KC_SLEP, _______,  KC_PWR ,\
+  82:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****         _______, KC_INT4, KC_UP,   KC_WBAK, KC_WFWD,  _______,\
+  83:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****         RESET,   KC_INT4, KC_LEFT, KC_DOWN, KC_RIGHT, _______
+  84:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****     ),
+  85:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****     //mouse1
+  86:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****     [_MS1] = LAYOUT(
+  87:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****         _______, _______, KC_MS_BTN1, KC_MS_U, KC_MS_BTN1, KC_MS_BTN2, \
+  88:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****         KC_WH_U, _______, KC_MS_L,    KC_MS_D, KC_MS_R,    _______, \
+  89:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****         KC_WH_D, _______, KC_WH_L,    KC_WH_R, _______,    KC_ACL1, \
+  90:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****         
+  91:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****         _______, _______, KC_MS_BTN3, KC_MS_BTN2, KC_MS_BTN1, _______, \
+  92:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****         _______, KC_WHOM, _______,    KC_MS_BTN4, KC_MS_BTN5, _______, \
+  93:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****         _______, _______, _______,     _______,    KC_ACL1,   _______
+  94:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****     ),
+  95:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****     //Null
+  96:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****     [_NULL] = LAYOUT(
+  97:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****         _______, _______, _______, _______, _______, _______, \
+  98:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****         _______, _______, _______, _______, _______, _______, \
+  99:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****         _______, _______, _______, _______, _______, _______, \
+ 100:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****         
+ 101:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****         _______, _______, _______, _______, _______, _______, \
+ 102:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****         _______, _______, _______, _______, _______, _______, \
+ 103:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****         _______, _______, _______, _______, _______, _______
+ 104:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****     )
+ 105:keyboards/cool836A/keymaps/Ohasheen/keymap.c **** };
+ 106:keyboards/cool836A/keymaps/Ohasheen/keymap.c **** 
+ 107:keyboards/cool836A/keymaps/Ohasheen/keymap.c **** bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+  16               		.loc 1 107 0
+  17               		.cfi_startproc
+  18               	.LVL0:
+  19               	/* prologue: function */
+  20               	/* frame size = 0 */
+  21               	/* stack size = 0 */
+  22               	.L__stack_usage = 0
+ 108:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****     switch (keycode) {
+  23               		.loc 1 108 0
+  24 0000 8932      		cpi r24,41
+  25 0002 2DE5      		ldi r18,93
+  26 0004 9207      		cpc r25,r18
+  27 0006 01F0      		breq .L3
+  28 0008 8A32      		cpi r24,42
+  29 000a 9D45      		sbci r25,93
+  30 000c 01F0      		breq .L4
+  31 000e 00C0      		rjmp .L2
+  32               	.L3:
+ 109:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****         case QMKBEST:
+ 110:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****             if (record->event.pressed) {
+  33               		.loc 1 110 0
+  34 0010 FB01      		movw r30,r22
+  35 0012 8281      		ldd r24,Z+2
+  36               	.LVL1:
+  37 0014 8823      		tst r24
+  38 0016 01F0      		breq .L2
+ 111:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****                 // when keycode QMKBEST is pressed
+ 112:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****                 SEND_STRING("QMK is the best thing ever!");
+  39               		.loc 1 112 0
+  40 0018 80E0      		ldi r24,lo8(__c.3566)
+  41 001a 90E0      		ldi r25,hi8(__c.3566)
+  42 001c 00C0      		rjmp .L11
+  43               	.LVL2:
+  44               	.L4:
+ 113:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****             } else {
+ 114:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****                 // when keycode QMKBEST is released
+ 115:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****             }
+ 116:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****             break;
+ 117:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****         case QMKURL:
+ 118:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****             if (record->event.pressed) {
+  45               		.loc 1 118 0
+  46 001e FB01      		movw r30,r22
+  47 0020 8281      		ldd r24,Z+2
+  48               	.LVL3:
+  49 0022 8823      		tst r24
+  50 0024 01F0      		breq .L2
+ 119:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****                 // when keycode QMKURL is pressed
+ 120:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****                 SEND_STRING("https://qmk.fm/\n");
+  51               		.loc 1 120 0
+  52 0026 80E0      		ldi r24,lo8(__c.3570)
+  53 0028 90E0      		ldi r25,hi8(__c.3570)
+  54               	.L11:
+  55 002a 0E94 0000 		call send_string_P
+  56               	.LVL4:
+  57               	.L2:
+ 121:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****             } else {
+ 122:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****                 // when keycode QMKURL is released
+ 123:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****             }
+ 124:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****             break;
+ 125:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****     }
+ 126:keyboards/cool836A/keymaps/Ohasheen/keymap.c ****     return true;
+ 127:keyboards/cool836A/keymaps/Ohasheen/keymap.c **** }
+  58               		.loc 1 127 0
+  59 002e 81E0      		ldi r24,lo8(1)
+  60 0030 0895      		ret
+  61               		.cfi_endproc
+  62               	.LFE24:
+  64               		.section	.progmem.data.__c.3570,"a",@progbits
+  67               	__c.3570:
+  68 0000 6874 7470 		.string	"https://qmk.fm/\n"
+  68      733A 2F2F 
+  68      716D 6B2E 
+  68      666D 2F0A 
+  68      00
+  69               		.section	.progmem.data.__c.3566,"a",@progbits
+  72               	__c.3566:
+  73 0000 514D 4B20 		.string	"QMK is the best thing ever!"
+  73      6973 2074 
+  73      6865 2062 
+  73      6573 7420 
+  73      7468 696E 
+  74               	.global	keymaps
+  75               		.section	.progmem.data.keymaps,"a",@progbits
+  78               	keymaps:
+  79 0000 2B43      		.word	17195
+  80 0002 1400      		.word	20
+  81 0004 1A00      		.word	26
+  82 0006 3600      		.word	54
+  83 0008 3700      		.word	55
+  84 000a 0500      		.word	5
+  85 000c E000      		.word	224
+  86 000e 0400      		.word	4
+  87 0010 1200      		.word	18
+  88 0012 0800      		.word	8
+  89 0014 1843      		.word	17176
+  90 0016 0C00      		.word	12
+  91 0018 2962      		.word	25129
+  92 001a 1D45      		.word	17693
+  93 001c 1B68      		.word	26651
+  94 001e 0664      		.word	25606
+  95 0020 1941      		.word	16665
+  96 0022 2C62      		.word	25132
+  97 0024 1000      		.word	16
+  98 0026 1500      		.word	21
+  99 0028 0700      		.word	7
+ 100 002a 1C00      		.word	28
+ 101 002c 1300      		.word	19
+ 102 002e 2A45      		.word	17706
+ 103 0030 0A00      		.word	10
+ 104 0032 1743      		.word	17175
+ 105 0034 0E00      		.word	14
+ 106 0036 1100      		.word	17
+ 107 0038 1600      		.word	22
+ 108 003a 2D00      		.word	45
+ 109 003c 2842      		.word	16936
+ 110 003e 0944      		.word	17417
+ 111 0040 0B00      		.word	11
+ 112 0042 0D00      		.word	13
+ 113 0044 0F00      		.word	15
+ 114 0046 2843      		.word	17192
+ 115 0048 3500      		.word	53
+ 116 004a 1E00      		.word	30
+ 117 004c 1F00      		.word	31
+ 118 004e 2000      		.word	32
+ 119 0050 2100      		.word	33
+ 120 0052 2200      		.word	34
+ 121 0054 0100      		.word	1
+ 122 0056 2602      		.word	550
+ 123 0058 2702      		.word	551
+ 124 005a 2F00      		.word	47
+ 125 005c 3000      		.word	48
+ 126 005e 3300      		.word	51
+ 127 0060 0100      		.word	1
+ 128 0062 2F02      		.word	559
+ 129 0064 3002      		.word	560
+ 130 0066 3402      		.word	564
+ 131 0068 0100      		.word	1
+ 132 006a 3400      		.word	52
+ 133 006c 2300      		.word	35
+ 134 006e 2400      		.word	36
+ 135 0070 2500      		.word	37
+ 136 0072 2600      		.word	38
+ 137 0074 2700      		.word	39
+ 138 0076 4C00      		.word	76
+ 139 0078 2E02      		.word	558
+ 140 007a 2D00      		.word	45
+ 141 007c 2502      		.word	549
+ 142 007e 3800      		.word	56
+ 143 0080 2E00      		.word	46
+ 144 0082 0100      		.word	1
+ 145 0084 0100      		.word	1
+ 146 0086 0100      		.word	1
+ 147 0088 0100      		.word	1
+ 148 008a 0100      		.word	1
+ 149 008c 0100      		.word	1
+ 150 008e 0100      		.word	1
+ 151 0090 0100      		.word	1
+ 152 0092 3A00      		.word	58
+ 153 0094 3B00      		.word	59
+ 154 0096 3C00      		.word	60
+ 155 0098 3D00      		.word	61
+ 156 009a 3E00      		.word	62
+ 157 009c 0100      		.word	1
+ 158 009e 3F00      		.word	63
+ 159 00a0 4000      		.word	64
+ 160 00a2 4100      		.word	65
+ 161 00a4 4200      		.word	66
+ 162 00a6 4300      		.word	67
+ 163 00a8 0100      		.word	1
+ 164 00aa 4400      		.word	68
+ 165 00ac 4500      		.word	69
+ 166 00ae 2302      		.word	547
+ 167 00b0 3502      		.word	565
+ 168 00b2 0100      		.word	1
+ 169 00b4 0100      		.word	1
+ 170 00b6 0100      		.word	1
+ 171 00b8 0100      		.word	1
+ 172 00ba 0100      		.word	1
+ 173 00bc 0100      		.word	1
+ 174 00be 4C00      		.word	76
+ 175 00c0 A800      		.word	168
+ 176 00c2 4A00      		.word	74
+ 177 00c4 4D00      		.word	77
+ 178 00c6 4B00      		.word	75
+ 179 00c8 4E00      		.word	78
+ 180 00ca 0100      		.word	1
+ 181 00cc 0100      		.word	1
+ 182 00ce 0100      		.word	1
+ 183 00d0 0100      		.word	1
+ 184 00d2 0100      		.word	1
+ 185 00d4 0100      		.word	1
+ 186 00d6 005C      		.word	23552
+ 187 00d8 0100      		.word	1
+ 188 00da 4600      		.word	70
+ 189 00dc 4900      		.word	73
+ 190 00de 0100      		.word	1
+ 191 00e0 0100      		.word	1
+ 192 00e2 0100      		.word	1
+ 193 00e4 0100      		.word	1
+ 194 00e6 0100      		.word	1
+ 195 00e8 0100      		.word	1
+ 196 00ea 0100      		.word	1
+ 197 00ec 8B00      		.word	139
+ 198 00ee 0100      		.word	1
+ 199 00f0 0100      		.word	1
+ 200 00f2 0100      		.word	1
+ 201 00f4 0100      		.word	1
+ 202 00f6 0100      		.word	1
+ 203 00f8 8B00      		.word	139
+ 204 00fa 0100      		.word	1
+ 205 00fc 0100      		.word	1
+ 206 00fe 0100      		.word	1
+ 207 0100 0100      		.word	1
+ 208 0102 A600      		.word	166
+ 209 0104 0100      		.word	1
+ 210 0106 A500      		.word	165
+ 211 0108 0100      		.word	1
+ 212 010a 8A00      		.word	138
+ 213 010c 5200      		.word	82
+ 214 010e B600      		.word	182
+ 215 0110 B700      		.word	183
+ 216 0112 0100      		.word	1
+ 217 0114 005C      		.word	23552
+ 218 0116 8A00      		.word	138
+ 219 0118 5000      		.word	80
+ 220 011a 5100      		.word	81
+ 221 011c 4F00      		.word	79
+ 222 011e 0100      		.word	1
+ 223 0120 3500      		.word	53
+ 224 0122 1E02      		.word	542
+ 225 0124 1F02      		.word	543
+ 226 0126 2002      		.word	544
+ 227 0128 2102      		.word	545
+ 228 012a 2202      		.word	546
+ 229 012c 0100      		.word	1
+ 230 012e 2302      		.word	547
+ 231 0130 2102      		.word	545
+ 232 0132 3100      		.word	49
+ 233 0134 2402      		.word	548
+ 234 0136 3102      		.word	561
+ 235 0138 0100      		.word	1
+ 236 013a 0100      		.word	1
+ 237 013c 0100      		.word	1
+ 238 013e 0100      		.word	1
+ 239 0140 0100      		.word	1
+ 240 0142 0100      		.word	1
+ 241 0144 0100      		.word	1
+ 242 0146 3302      		.word	563
+ 243 0148 2502      		.word	549
+ 244 014a 3800      		.word	56
+ 245 014c 3502      		.word	565
+ 246 014e 4C00      		.word	76
+ 247 0150 2D02      		.word	557
+ 248 0152 3300      		.word	51
+ 249 0154 1E02      		.word	542
+ 250 0156 3802      		.word	568
+ 251 0158 2E00      		.word	46
+ 252 015a 0100      		.word	1
+ 253 015c AE00      		.word	174
+ 254 015e 0100      		.word	1
+ 255 0160 AA00      		.word	170
+ 256 0162 A900      		.word	169
+ 257 0164 AC00      		.word	172
+ 258 0166 AB00      		.word	171
+ 259 0168 0100      		.word	1
+ 260 016a 0100      		.word	1
+ 261 016c F400      		.word	244
+ 262 016e F000      		.word	240
+ 263 0170 F400      		.word	244
+ 264 0172 F500      		.word	245
+ 265 0174 F900      		.word	249
+ 266 0176 0100      		.word	1
+ 267 0178 F200      		.word	242
+ 268 017a F100      		.word	241
+ 269 017c F300      		.word	243
+ 270 017e 0100      		.word	1
+ 271 0180 FA00      		.word	250
+ 272 0182 0100      		.word	1
+ 273 0184 FB00      		.word	251
+ 274 0186 FC00      		.word	252
+ 275 0188 0100      		.word	1
+ 276 018a FE00      		.word	254
+ 277 018c 0100      		.word	1
+ 278 018e 0100      		.word	1
+ 279 0190 F600      		.word	246
+ 280 0192 F500      		.word	245
+ 281 0194 F400      		.word	244
+ 282 0196 0100      		.word	1
+ 283 0198 0100      		.word	1
+ 284 019a B500      		.word	181
+ 285 019c 0100      		.word	1
+ 286 019e F700      		.word	247
+ 287 01a0 F800      		.word	248
+ 288 01a2 0100      		.word	1
+ 289 01a4 0100      		.word	1
+ 290 01a6 0100      		.word	1
+ 291 01a8 0100      		.word	1
+ 292 01aa 0100      		.word	1
+ 293 01ac FE00      		.word	254
+ 294 01ae 0100      		.word	1
+ 295 01b0 0100      		.word	1
+ 296 01b2 0100      		.word	1
+ 297 01b4 0100      		.word	1
+ 298 01b6 0100      		.word	1
+ 299 01b8 0100      		.word	1
+ 300 01ba 0100      		.word	1
+ 301 01bc 0100      		.word	1
+ 302 01be 0100      		.word	1
+ 303 01c0 0100      		.word	1
+ 304 01c2 0100      		.word	1
+ 305 01c4 0100      		.word	1
+ 306 01c6 0100      		.word	1
+ 307 01c8 0100      		.word	1
+ 308 01ca 0100      		.word	1
+ 309 01cc 0100      		.word	1
+ 310 01ce 0100      		.word	1
+ 311 01d0 0100      		.word	1
+ 312 01d2 0100      		.word	1
+ 313 01d4 0100      		.word	1
+ 314 01d6 0100      		.word	1
+ 315 01d8 0100      		.word	1
+ 316 01da 0100      		.word	1
+ 317 01dc 0100      		.word	1
+ 318 01de 0100      		.word	1
+ 319 01e0 0100      		.word	1
+ 320 01e2 0100      		.word	1
+ 321 01e4 0100      		.word	1
+ 322 01e6 0100      		.word	1
+ 323 01e8 0100      		.word	1
+ 324 01ea 0100      		.word	1
+ 325 01ec 0100      		.word	1
+ 326 01ee 0100      		.word	1
+ 327 01f0 0100      		.word	1
+ 328 01f2 0100      		.word	1
+ 329 01f4 0100      		.word	1
+ 330 01f6 0100      		.word	1
+ 331               		.text
+ 332               	.Letext0:
+ 333               		.file 2 "/usr/lib/avr/include/stdint.h"
+ 334               		.file 3 "tmk_core/common/keyboard.h"
+ 335               		.file 4 "tmk_core/common/keycode.h"
+ 336               		.file 5 "tmk_core/common/action_code.h"
+ 337               		.file 6 "tmk_core/common/action.h"
+ 338               		.file 7 "tmk_core/common/report.h"
+ 339               		.file 8 "quantum/quantum_keycodes.h"
+ 340               		.file 9 "tmk_core/common/action_util.h"
+ 341               		.file 10 "quantum/quantum.h"
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 keymap.c
+     /tmp/cchhvS33.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/cchhvS33.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/cchhvS33.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/cchhvS33.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/cchhvS33.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/cchhvS33.s:13     .text.process_record_user:0000000000000000 process_record_user
+     /tmp/cchhvS33.s:72     .progmem.data.__c.3566:0000000000000000 __c.3566
+     /tmp/cchhvS33.s:67     .progmem.data.__c.3570:0000000000000000 __c.3570
+     /tmp/cchhvS33.s:78     .progmem.data.keymaps:0000000000000000 keymaps
+
+UNDEFINED SYMBOLS
+send_string_P
