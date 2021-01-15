@@ -70,9 +70,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     //OS
     [_OS] = LAYOUT(
-        _______, _______, KC_BRID, KC_BRIU, KC_SLEP,  KC_PWR,        _______, _______, _______, _______, _______, _______, 
-        _______, KC_PSCR, KC_SLCK, KC_PAUSE, KC_INT5, _______,       _______, KC_INT4, _______, _______, _______, _______, 
-        KC_CAPS, KC_INS,  _______, _______, _______,  _______,       _______, _______, _______, _______, _______, _______
+        _______, _______, KC_BRID, KC_BRIU, KC_SLEP,  KC_PWR,        RGB_HUD, RGB_HUI, RGB_SAD, RGB_SAI, RGB_VAD, RGB_VAI, 
+        _______, KC_PSCR, KC_SLCK, KC_PAUSE, KC_INT5, _______,       RGB_MODE_PLAIN, KC_INT4, RGB_MODE_BREATHE, RGB_MODE_RAINBOW, RGB_MODE_SWIRL, RGB_MODE_SNAKE,
+        KC_CAPS, KC_INS,  _______, _______, _______,  _______,       RGB_TOG, RGB_MODE_FORWARD, RGB_MODE_KNIGHT,  RGB_MODE_XMAS, RGB_MODE_GRADIENT, RGB_MODE_RGBTEST
     ),
     //Null
     [_NULL] = LAYOUT(
