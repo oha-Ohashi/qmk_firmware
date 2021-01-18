@@ -29,10 +29,12 @@ enum layer_names {
 
 // Defines the keycodes used by our macros in process_record_user
 enum custom_keycodes {
+    CTL_F11,
+    CTL_F12,
+    MIA,
     QMKBEST = SAFE_RANGE,
     QMKURL
 };
-
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_eucalyn] = LAYOUT(
         LT(_C, KC_TAB),  LT(_OS, KC_Q),  KC_W,        KC_COMM,      KC_DOT,       KC_B,                               LT(_C, KC_M), KC_R,  KC_D,  KC_Y,   KC_P,  LT(_MS, KC_BSPC), 
@@ -54,7 +56,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_M] = LAYOUT(
         KC_GRAVE, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,             KC_TILD, KC_CIRC, KC_DLR,  _______, _______, KC_DEL, 
         KC_COLN,  KC_PLUS, KC_MINS, KC_ASTR, KC_DQUO, KC_QUOT,             KC_UNDS, KC_LABK, KC_RABK, KC_AMPR, KC_PIPE,  KC_EQL,
-        KC_BSLS,  KC_SLSH, KC_DOT,  KC_QUES, _______, KC_MUTE,    KC_MPLY, _______, KC_VOLD, KC_VOLU,      KC_MPRV,    KC_MNXT
+        KC_BSLS,  KC_SLSH, KC_DOT,  KC_QUES, CTL_F11, KC_MUTE,    KC_MPLY, MIA, KC_VOLD, KC_VOLU,      KC_MPRV,    KC_MNXT
     ),  
     //cursor
     [_C] = LAYOUT(
@@ -71,8 +73,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //OS
     [_OS] = LAYOUT(
         _______, _______, KC_BRID, KC_BRIU, KC_SLEP,  KC_PWR,        RGB_HUD, RGB_HUI, RGB_SAD, RGB_SAI, RGB_VAD, RGB_VAI, 
-        _______, KC_PSCR, KC_SLCK, KC_PAUSE, KC_INT5, _______,       RGB_MODE_PLAIN, KC_INT4, RGB_MODE_BREATHE, RGB_MODE_RAINBOW, RGB_MODE_SWIRL, RGB_MODE_SNAKE,
-        KC_CAPS, KC_INS,  _______, _______, _______,  _______,       RGB_TOG, RGB_MODE_FORWARD, RGB_MODE_KNIGHT,  RGB_MODE_XMAS, RGB_MODE_GRADIENT, RGB_MODE_RGBTEST
+        _______, KC_PSCR, KC_SLCK, KC_PAUSE, CTL_F11, _______,       RGB_MODE_PLAIN, MIA, RGB_MODE_BREATHE, RGB_MODE_RAINBOW, RGB_MODE_SWIRL, RGB_MODE_SNAKE,
+        KC_CAPS, KC_INS,  _______, _______, KC_INT5,  KC_INT4,       RGB_TOG, RGB_MODE_FORWARD, RGB_MODE_KNIGHT,  RGB_MODE_XMAS, RGB_MODE_GRADIENT, RGB_MODE_RGBTEST
     ),
     //Null
     [_NULL] = LAYOUT(
@@ -84,6 +86,26 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
+        case CTL_F11:
+            if (record->event.pressed) {
+                // when keycode QMKBEST is pressed
+                register_code(KC_LCTL);
+                tap_code(KC_F11);
+                unregister_code(KC_LCTL);
+            } else {
+                // when keycode QMKBEST is released
+            }
+            break;
+        case MIA:
+            if (record->event.pressed) {
+                // when keycode QMKBEST is pressed
+                register_code(KC_LCTL);
+                tap_code(KC_F12);
+                unregister_code(KC_LCTL);
+            } else {
+                // when keycode QMKBEST is released
+            }
+            break;
         case QMKBEST:
             if (record->event.pressed) {
                 // when keycode QMKBEST is pressed
