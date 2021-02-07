@@ -17,6 +17,7 @@
 
 // Defines names for use in layer keycodes and the keymap
 enum layer_names {
+    _qwerty,
     _eucalyn,
     _vimose,
     _N,         //Number Layer
@@ -36,9 +37,14 @@ enum custom_keycodes {
     QMKURL
 };
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+    [_qwerty] = LAYOUT(
+        KC_TAB,   KC_Q,  KC_W,    KC_E,      KC_R,       KC_T,                               LT(_C, KC_Y), KC_U,  KC_I,  KC_O,  LT(_OS, KC_P),  LT(_MS, KC_BSPC), 
+        KC_LSFT,  KC_A,           KC_S,        KC_D,         KC_F,   KC_G,                 KC_H,         KC_J,  KC_K,     KC_L,   KC_SCLN,  KC_ENT,    
+        KC_LCTL,  LT(_MS, KC_Z),  GUI_T(KC_X), LALT_T(KC_C), LT(_M, KC_V), KC_SPC,   LT(_N, KC_ENTER), LT(_M, KC_N), KC_M,  KC_COMM,  KC_DOT,      KC_ESC
+    ),
     [_eucalyn] = LAYOUT(
-        LT(_C, KC_TAB),  LT(_OS, KC_Q),  KC_W,        KC_COMM,      KC_DOT,       KC_B,                               LT(_C, KC_M), KC_R,  KC_D,  KC_Y,   KC_P,  LT(_MS, KC_BSPC), 
-        CTL_T(KC_SCLN),  KC_A,           KC_O,        KC_E,         KC_U,         KC_I,                               KC_G,         KC_T,  KC_K,  KC_N,   KC_S,  CTL_T(KC_MINS),    
+        LT(_C, KC_TAB),  LT(_OS, KC_Q),  KC_W,        KC_COMM,      KC_DOT,       KC_B,                               LT(_C, KC_M), KC_R,  KC_D,  KC_Y,   LT(_OS, KC_P),  LT(_MS, KC_BSPC), 
+        CTL_T(KC_SCLN),  KC_A,           KC_O,        KC_E,         KC_U,         KC_I,                               KC_G,         KC_T,  KC_K,  KC_N,        KC_S,  CTL_T(KC_MINS),    
         LSFT_T(KC_ESC),  LT(_MS, KC_Z),  GUI_T(KC_X), LALT_T(KC_C), LT(_M, KC_V), LSFT_T(KC_SPC),   LT(_N, KC_ENTER), LT(_M, KC_F), KC_H,  KC_J,  KC_L,      LT(_C, KC_ENT)
     ),
     [_vimose] = LAYOUT(
@@ -74,7 +80,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_OS] = LAYOUT(
         _______, _______, KC_BRID, KC_BRIU, KC_SLEP,  KC_PWR,        RGB_HUD, RGB_HUI, RGB_SAD, RGB_SAI, RGB_VAD, RGB_VAI, 
         _______, KC_PSCR, KC_SLCK, KC_PAUSE, CTL_F11, _______,       RGB_MODE_PLAIN, MIA, RGB_MODE_BREATHE, RGB_MODE_RAINBOW, RGB_MODE_SWIRL, RGB_MODE_SNAKE,
-        KC_CAPS, KC_INS,  _______, _______, KC_INT5,  KC_INT4,       RGB_TOG, RGB_MODE_FORWARD, RGB_MODE_KNIGHT,  RGB_MODE_XMAS, RGB_MODE_GRADIENT, RGB_MODE_RGBTEST
+        KC_CAPS, KC_INS,  TO(_qwerty), TO(_eucalyn), KC_INT5,  KC_INT4,       RGB_TOG, RGB_MODE_FORWARD, RGB_MODE_KNIGHT,  RGB_MODE_XMAS, RGB_MODE_GRADIENT, RGB_MODE_RGBTEST
     ),
     //Null
     [_NULL] = LAYOUT(
