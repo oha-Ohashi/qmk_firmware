@@ -28,7 +28,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define DESCRIPTION     Expandable keyboard with up to 120 keys
 
 /* key matrix size */
-#define MATRIX_ROWS 6*2 //master: 6 rows, slave: 6 rows
+#define MATRIX_ROWS 4*2 //master: 6 rows, slave: 6 rows
 #define MATRIX_COLS 10
 
 /*
@@ -48,6 +48,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 /* COL2ROW, ROW2COL*/
 #define DIODE_DIRECTION COL2ROW
 
+//#define MASTER_LEFT
+#define MASTER_RIGHT
 /*
  * Split Keyboard specific options, make sure you have 'SPLIT_KEYBOARD = yes' in your rules.mk, and define SOFT_SERIAL_PIN.
  */
