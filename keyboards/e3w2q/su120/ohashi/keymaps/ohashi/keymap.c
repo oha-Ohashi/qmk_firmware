@@ -17,8 +17,8 @@
 
 // Defines names for use in layer keycodes and the keymap
 enum layer_names {
-    _qwerty,
     _qwe_N,
+    _qwerty,
     _eucalyn,
     _N,         //Number Layer
     _M,         //Marks Layer
