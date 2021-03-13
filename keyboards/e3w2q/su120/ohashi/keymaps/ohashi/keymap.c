@@ -17,9 +17,9 @@
 
 // Defines names for use in layer keycodes and the keymap
 enum layer_names {
-    _qwe_N,
-    _qwerty,
     _eucalyn,
+    _qwerty,
+    _qwe_N,
     _N,         //Number Layer
     _M,         //Marks Layer
     _C,         //Corsur Layer
@@ -50,9 +50,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                              _______, _______,      _______, _______
     ),
     [_eucalyn] = LAYOUT(
-        LT(_C, KC_TAB),  LT(_OS, KC_Q),  KC_W,        KC_COMM,      KC_DOT,       KC_B,     LT(_C, KC_M), KC_R, KC_D,  KC_Y, KC_P,     LT(_MS, KC_BSPC), 
-        CTL_T(KC_SCLN),  KC_A,           KC_O,        KC_E,         KC_U,         KC_I,        KC_G,      KC_T, KC_K,  KC_N, KC_S,     CTL_T(KC_MINS),    
-        LSFT_T(KC_ESC),  LT(_MS, KC_Z),  GUI_T(KC_X), LALT_T(KC_C), LT(_M, KC_V), KC_B,        KC_F,      KC_H, KC_J,  KC_L, KC_QUOT,  LT(_C, KC_ENT),
+        LT(_C, KC_TAB),  LT(_OS, KC_Q),  KC_W,        KC_B,         KC_F,         KC_COMM,     LT(_C, KC_M), KC_R, KC_D,  KC_Y, KC_P,     LT(_MS, KC_BSPC), 
+        CTL_T(KC_SCLN),  KC_A,           KC_O,        KC_E,         KC_U,         KC_I,        KC_G,         KC_T, KC_K,  KC_N, KC_S,     CTL_T(KC_MINS),    
+        LSFT_T(KC_ESC),  LT(_MS, KC_Z),  GUI_T(KC_X), LALT_T(KC_C), LT(_M, KC_V), KC_LCTL,     KC_BSPC,      KC_H, KC_J,  KC_L, KC_QUOT,  LT(_C, KC_ENT),
         LT(_M, CTL_F11),    LSFT_T(KC_SPC), LT(_N, KC_ENTER), LT(_M, MIA)
     ),
     //number
