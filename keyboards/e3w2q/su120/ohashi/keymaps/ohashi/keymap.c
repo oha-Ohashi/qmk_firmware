@@ -31,8 +31,8 @@ enum layer_names {
 // Defines the keycodes used by our macros in process_record_user
 enum custom_keycodes {
     CTL_F11,
-    CTL_F12,
     MIA,
+    ALT_GRAVE,
     QMKBEST = SAFE_RANGE,
     QMKURL
 };
@@ -46,28 +46,28 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_qwe_N] = LAYOUT(
         KC_GRAVE, KC_1,   KC_2,    KC_3,    KC_4,    KC_5,        _______, _______, _______, _______, _______, _______, 
         KC_ENTER, KC_6,   KC_7,    KC_8,    KC_9,    KC_0,        _______, _______, _______, _______, _______, _______, 
-        _______, _______, _______, _______, KC_LALT, KC_ESC,     _______, _______, _______, _______, _______, _______, 
-                                             _______, _______,      _______, _______
+        _______, _______, _______, KC_LALT, KC_ESC,  _______,     _______, _______, _______, _______, _______, _______, 
+                                            _______, _______,      _______, _______
     ),
     [_eucalyn] = LAYOUT(
         LT(_C, KC_TAB),  LT(_OS, KC_Q),  KC_W,        KC_B,         KC_F,         KC_COMM,     LT(_C, KC_M), KC_R, KC_D,  KC_Y, KC_P,     LT(_MS, KC_BSPC), 
         CTL_T(KC_SCLN),  KC_A,           KC_O,        KC_E,         KC_U,         KC_I,        KC_G,         KC_T, KC_K,  KC_N, KC_S,     CTL_T(KC_MINS),    
         LSFT_T(KC_ESC),  LT(_MS, KC_Z),  GUI_T(KC_X), LALT_T(KC_C), LT(_M, KC_V), KC_LCTL,     KC_BSPC,      KC_H, KC_J,  KC_L, KC_QUOT,  LT(_C, KC_ENT),
-        LT(_M, CTL_F11),    LSFT_T(KC_SPC), LT(_N, KC_ENTER), LT(_M, MIA)
+        LT(_M, KC_F15),    LSFT_T(KC_SPC), LT(_N, KC_ENTER), LT(_M, KC_F16)
     ),
     //number
     [_N] = LAYOUT(
         KC_GRAVE, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,      KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    _______,
-        KC_LCBR,  KC_LPRN, KC_RPRN, KC_LBRC, KC_RBRC, KC_RCBR,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  _______,
-        _______,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,     _______, _______, _______, KC_F11,  KC_F12,  _______, 
-        _______, _______, _______, _______
+        KC_LCBR,  KC_LPRN, KC_RPRN, KC_LBRC, KC_RBRC, KC_RCBR,   KC_DOT,  KC_LABK, KC_RABK, KC_F11,  KC_F12,  _______, 
+        _______,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,     KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  _______,       
+                                             _______, _______, _______, _______
     ),
     //marks
     [_M] = LAYOUT(
         KC_GRAVE, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,   KC_TILD, KC_CIRC, KC_DLR,  _______, _______, KC_DEL, 
         KC_COLN,  KC_PLUS, KC_MINS, KC_ASTR, KC_DQUO, KC_QUOT,   KC_UNDS, KC_HOME, KC_END, KC_AMPR, KC_PIPE, KC_EQL,
-        KC_BSLS,  KC_SLSH, KC_DOT,  KC_QUES, CTL_F11, KC_MUTE,   KC_MPLY, MIA,     KC_VOLD, KC_VOLU, KC_MPRV, KC_MNXT,
-        _______, _______, _______, _______
+        KC_BSLS,  KC_SLSH, KC_DOT,  KC_QUES, _______, KC_MUTE,   KC_MPLY, _______, KC_VOLD, KC_VOLU, KC_MPRV, KC_MNXT,
+        LALT(KC_GRAVE), LALT(KC_GRAVE), LCTL(KC_SPC),LCTL(KC_SPC)
     ),  
     //cursor
     [_C] = LAYOUT(
@@ -79,7 +79,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //mouse1
     [_MS] = LAYOUT(
         _______, _______, KC_MS_BTN1, KC_MS_U, KC_MS_BTN1, KC_MS_BTN2,    _______, _______, KC_MS_BTN3, KC_MS_BTN2, KC_MS_BTN1, _______, 
-        KC_WH_U, _______, KC_MS_L,    KC_MS_D, KC_MS_R,    KC_WH_U,       _______, KC_WHOM, _______,    KC_MS_BTN4, KC_MS_BTN5, _______, 
+        KC_WH_U, _______, KC_MS_L,    KC_MS_D, KC_MS_R,    KC_WH_U,       _______, KC_WHOM, KC_WREF,    KC_MS_BTN4, KC_MS_BTN5, _______, 
         KC_WH_D, _______, KC_WH_L,    KC_WH_R, _______,    KC_WH_D,       _______, _______, KC_MS_BTN1, _______,    _______,    _______,
         _______, _______, _______, _______
     ),
@@ -117,6 +117,16 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 register_code(KC_LCTL);
                 tap_code(KC_F12);
                 unregister_code(KC_LCTL);
+            } else {
+                // when keycode QMKBEST is released
+            }
+            break;
+         case ALT_GRAVE:
+            if (record->event.pressed) {
+                // when keycode QMKBEST is pressed
+                register_code(KC_LALT);
+                tap_code(KC_GRAVE);
+                unregister_code(KC_LALT);
             } else {
                 // when keycode QMKBEST is released
             }
