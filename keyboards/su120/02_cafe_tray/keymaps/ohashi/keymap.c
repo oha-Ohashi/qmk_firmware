@@ -53,7 +53,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     [_eucalyn] = LAYOUT(
         KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, LT(_O, KC_0),
-        LT(_O, KC_Q),    KC_W,          KC_B,           KC_F,         KC_COMM,         LT(_C, KC_M), KC_R,  KC_D,  KC_Y, LT(_MS, KC_P), 
+        LT(_O, KC_Q),    KC_W,          KC_B,           KC_F,         KC_COMM,         LT(_C, KC_M), KC_R,  LT(_C, KC_D),  LT(_O, KC_Y), LT(_MS, KC_P), 
         KC_A,            KC_O,          KC_E,           KC_U,         KC_I,            KC_G,         KC_T,  KC_K,  KC_N, KC_S,    
         LCTL_T(KC_Z),    LSFT_T(KC_X),  LALT_T(KC_C),   LT(_M, KC_V), LCTL_T(KC_TAB),  KC_BSPC,      KC_H,  KC_J,  KC_L, KC_UP,
         LT(_MS, KC_ESC), GUI_T(KC_TAB), LT(_M, KC_F15), LSFT_T(KC_SPC),           LT(_M, KC_ENTER), LT(_N, KC_LEFT), KC_RIGHT, KC_DOWN
@@ -93,10 +93,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //O
     [_O] = LAYOUT(
         TO(_eucalyn),  TO(_qwerty), _______, _______, _______,      KC_INT4, KC_INT5, KC_BRID, KC_BRIU, _______,     
-        _______, _______, LSA(KC_TAB), KC_ENT,  _______,               _______, _______, KC_PSCR, KC_SLCK, KC_PAUSE, 
-        _______, LCTL(KC_S), LALT(KC_TAB), KC_UP,   _______,              _______, _______, KC_INS, KC_HOME, KC_PGUP, 
+        _______, LCTL(KC_W), LSFT(KC_TAB), KC_ENT,  _______,               _______, _______, KC_PSCR, KC_SLCK, KC_PAUSE, 
+        KC_ESC,  LCTL(KC_S), KC_TAB, KC_UP,   _______,              _______, LCTL(KC_T), KC_INS, KC_HOME, KC_PGUP, 
         _______, _______, _______, KC_DOWN, _______, _______, _______,  KC_DEL,  KC_END,  KC_PGDN,  
-        _______, _______, _______, _______,                                 _______, _______, _______, KC_CAPS
+        _______, _______, KC_LCTL, KC_LALT,                                 _______, _______, _______, KC_CAPS
     ),
     //Null
     [_NULL] = LAYOUT(
