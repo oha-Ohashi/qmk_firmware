@@ -56,7 +56,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         LT(_O, KC_Q),    KC_W,          KC_B,           KC_F,         KC_COMM,         LT(_C, KC_M), KC_R,  KC_D,  KC_Y, LT(_MS, KC_P), 
         KC_A,            KC_O,          KC_E,           KC_U,         KC_I,            KC_G,         KC_T,  KC_K,  KC_N, KC_S,    
         LCTL_T(KC_Z),    LSFT_T(KC_X),  LALT_T(KC_C),   LT(_M, KC_V), LCTL_T(KC_TAB),  KC_BSPC,      KC_H,  KC_J,  KC_L, KC_UP,
-        LT(_MS, KC_ESC), GUI_T(KC_F15), LT(_M, KC_F16), LSFT_T(KC_SPC),           LT(_M, KC_ENTER), LT(_N, KC_LEFT), KC_RIGHT, KC_DOWN
+        LT(_MS, KC_ESC), GUI_T(KC_TAB), LT(_M, KC_F15), LSFT_T(KC_SPC),           LT(_M, KC_ENTER), LT(_N, KC_LEFT), KC_RIGHT, KC_DOWN
     ),
     //number
     [_N] = LAYOUT(
@@ -69,10 +69,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //marks
     [_M] = LAYOUT(
         _______, _______, _______, _______, _______,   _______, _______, _______, _______, _______, 
-        KC_GRAVE,KC_BSLS, KC_SLSH, KC_DOT,  _______,   KC_PLUS, KC_MINS, KC_ASTR, KC_SLSH, KC_EQL,
+        KC_GRAVE,KC_BSLS, KC_DOT , KC_SLSH, _______,   KC_PLUS, KC_MINS, KC_ASTR, KC_SLSH, KC_EQL, 
         KC_SCLN, KC_COLN, KC_UNDS, KC_MINS, KC_TILD,   KC_F5,   KC_HOME, KC_END,  KC_F7,   KC_F8,
-        KC_EXLM, KC_QUES, KC_QUOT, KC_DQUO, _______,   KC_DEL,  KC_WHOM, _______, _______, _______,
-        _______, _______,_______,_______,                       _______,_______,_______,_______
+        KC_EXLM, KC_QUES, KC_DQUO, KC_QUOT, _______,   KC_DEL,  KC_WHOM, _______, _______, _______,
+        _______, _______, KC_F16,  KC_F16,                      _______,_______,_______,_______
     ),  
     //cursor
     [_C] = LAYOUT(
@@ -92,11 +92,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     //O
     [_O] = LAYOUT(
-        TO(_eucalyn),  TO(_qwerty), _______, KC_BRID, KC_BRIU,     KC_INT4, KC_INT5, _______, _______, _______,     
-        _______, KC_PSCR, KC_SLCK, KC_PAUSE, _______,              _______, _______, _______, _______, _______,
-        KC_CAPS, KC_INS, KC_HOME, KC_PGUP, KC_INT4,                _______, _______, _______, _______, _______,
-        _______, KC_DEL,  KC_END,  KC_PGDN,  KC_INT5,              _______, _______, _______, _______, _______,
-        _______, _______, _______, _______,                                 _______, _______, _______, _______
+        TO(_eucalyn),  TO(_qwerty), _______, _______, _______,      KC_INT4, KC_INT5, KC_BRID, KC_BRIU, _______,     
+        _______, _______, LSA(KC_TAB), KC_ENT,  _______,               _______, _______, KC_PSCR, KC_SLCK, KC_PAUSE, 
+        _______, LCTL(KC_S), LALT(KC_TAB), KC_UP,   _______,              _______, _______, KC_INS, KC_HOME, KC_PGUP, 
+        _______, _______, _______, KC_DOWN, _______, _______, _______,  KC_DEL,  KC_END,  KC_PGDN,  
+        _______, _______, _______, _______,                                 _______, _______, _______, KC_CAPS
     ),
     //Null
     [_NULL] = LAYOUT(
