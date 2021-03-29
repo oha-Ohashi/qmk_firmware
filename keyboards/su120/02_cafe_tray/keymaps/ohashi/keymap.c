@@ -64,7 +64,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_LCBR, KC_RCBR, KC_LABK, KC_RABK, _______,    _______, _______, _______,  KC_F11, KC_F12,
         KC_LPRN, KC_RPRN, KC_LBRC, KC_RBRC, _______,    _______, KC_CIRC, KC_DLR,  KC_AMPR, KC_PIPE, 
         KC_COLN, KC_BSLS, KC_SLSH, KC_UNDS, _______,    KC_DEL,  _______, KC_MUTE, KC_MPRV, KC_VOLU,
-        _______, _______,_______, LALT(KC_GRAVE),               LCTL(KC_SPC), KC_MPRV, KC_MNXT, KC_VOLD
+        _______, _______, _______, LALT(KC_GRAVE),               LCTL(KC_SPC), KC_MPRV, KC_MNXT, KC_VOLD
     ),
     //marks
     [_M] = LAYOUT(
