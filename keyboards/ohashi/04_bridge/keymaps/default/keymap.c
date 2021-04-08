@@ -55,14 +55,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     [_eucalyn] = LAYOUT(
         LT(_C, KC_TAB),   LT(_F,KC_Q), KC_W,         LSFT_T(KC_B), KC_F,        KC_COMM,       ___, ___, KC_DOT,        KC_R, LT(_C, KC_D), KC_Y,  KC_P,   LT(_O, KC_BSPC),
-        LCTL_T(KC_SCLN),  KC_A,        KC_O,         KC_E,         KC_U,        LT(_N,KC_I),   ___, ___, LT(_N,KC_G),   KC_T, KC_K,         KC_N,  KC_S,   LCTL_T(KC_MINS),
+        LCTL_T(KC_SCLN),  KC_A,        KC_O,         KC_E,         LT(_N, KC_U),KC_I,          ___, ___, KC_G,          KC_T, KC_K,         KC_N,  KC_S,   LCTL_T(KC_MINS),
         LT(_C, KC_ESC),   KC_Z,        LGUI_T(KC_X), LALT_T(KC_C), LT(_C,KC_V), LSFT_T(KC_SPC),___, ___, LT(_N,KC_ENT), KC_H, KC_J,         KC_L,  KC_M,   LT(_F, _______)
     ),
     //number
     [_N] = LAYOUT(
         KC_GRAVE, KC_QUES, KC_EXLM, KC_DQUO, KC_QUOT, KC_UNDS, ___,       ___, KC_SLSH, KC_7, KC_8, KC_9, KC_ASTR, KC_DEL,
-        KC_AMPR,  KC_LPRN, KC_RPRN, KC_LBRC, KC_RBRC, KC_F15,  ___,       ___, KC_F16, KC_4, KC_5, KC_6, KC_PLUS, KC_EQL,
-        KC_PIPE,  KC_LCBR, KC_RCBR, KC_LABK, KC_RABK, _______, ___,       ___, _______,  KC_1, KC_2, KC_3, KC_0,    KC_BSLS
+        KC_AMPR,  KC_LPRN, KC_RPRN, KC_LBRC, KC_RBRC, _______, ___,       ___, KC_F16,  KC_4, KC_5, KC_6, KC_PLUS, KC_EQL,
+        KC_PIPE,  KC_LCBR, KC_RCBR, KC_LABK, KC_RABK, KC_F15,  ___,       ___, KC_0,    KC_1, KC_2, KC_3, _______, KC_BSLS
     ),
     //Functions and Brackets
     [_F] = LAYOUT(
