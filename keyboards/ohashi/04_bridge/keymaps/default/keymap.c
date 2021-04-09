@@ -54,21 +54,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_LCTL, KC_Z, KC_X, KC_C, KC_V, LT(_qwe_N, KC_B), KC_SPC,       KC_3,    KC_N, KC_M, KC_COMM, KC_DOT,KC_SLSH,  KC_0
     ),
     [_eucalyn] = LAYOUT(
-        LT(_C, KC_TAB),   LT(_F,KC_Q), KC_W,         LSFT_T(KC_B), KC_F,        KC_COMM,       ___, ___, KC_DOT,        KC_R, LT(_C, KC_D), KC_Y,  KC_P,   LT(_O, KC_BSPC),
-        LCTL_T(KC_SCLN),  KC_A,        KC_O,         KC_E,         LT(_N, KC_U),KC_I,          ___, ___, KC_G,          KC_T, KC_K,         KC_N,  KC_S,   LCTL_T(KC_MINS),
-        LT(_C, KC_ESC),   KC_Z,        LGUI_T(KC_X), LALT_T(KC_C), LT(_C,KC_V), LSFT_T(KC_SPC),___, ___, LT(_N,KC_ENT), KC_H, KC_J,         KC_L,  KC_M,   LT(_F, _______)
+        KC_TAB,           LT(_F,KC_DOT), KC_W,         LSFT_T(KC_B), KC_F,        KC_COMM,       ___, ___, KC_M,          KC_R, LT(_C, KC_D), KC_Y,  KC_P,   LT(_O, KC_BSPC),
+        LCTL_T(KC_SCLN),  KC_A,          KC_O,         KC_E,         LT(_N, KC_U),LT(_N,KC_I),   ___, ___, LT(_F,KC_G),   KC_T, KC_K,         KC_N,  KC_S,   LCTL_T(KC_MINS),
+        LT(_C, KC_ESC),   KC_Z,          LGUI_T(KC_X), LALT_T(KC_C), LT(_C,KC_V), LSFT_T(KC_SPC),___, ___, LT(_N,KC_ENT), KC_H, KC_J,         KC_L,  KC_Q,   LT(_F, _______)
     ),
     //number
     [_N] = LAYOUT(
         KC_GRAVE, KC_QUES, KC_EXLM, KC_DQUO, KC_QUOT, KC_UNDS, ___,       ___, KC_SLSH, KC_7, KC_8, KC_9, KC_ASTR, KC_DEL,
-        KC_AMPR,  KC_LPRN, KC_RPRN, KC_LBRC, KC_RBRC, _______, ___,       ___, KC_F16,  KC_4, KC_5, KC_6, KC_PLUS, KC_EQL,
-        KC_PIPE,  KC_LCBR, KC_RCBR, KC_LABK, KC_RABK, KC_F15,  ___,       ___, KC_0,    KC_1, KC_2, KC_3, _______, KC_BSLS
+        KC_AMPR,  KC_LPRN, KC_RPRN, KC_LBRC, KC_RBRC, _______, ___,       ___, KC_F16,  KC_4, KC_5, KC_6, KC_0,    KC_EQL,
+        KC_PIPE,  KC_LCBR, KC_RCBR, KC_LABK, KC_RABK, KC_F15,  ___,       ___, KC_0,    KC_1, KC_2, KC_3, KC_PLUS, KC_BSLS
     ),
     //Functions and Brackets
     [_F] = LAYOUT(
-        ___, _______, KC_PSCR, KC_SLCK, KC_PAUSE, ___, ___,          ___, KC_F7, KC_F8, KC_F9, KC_F12, ___, ___,
-        ___, KC_CAPS, KC_INS,  KC_HOME, KC_PGUP,  ___, ___,          ___, KC_F4, KC_F5, KC_F6, KC_F11, ___, ___,
-        ___, _______, KC_DEL,  KC_END,  KC_PGDN,  ___, ___,          ___, KC_F1, KC_F2, KC_F3, KC_F10, ___, ___ 
+        ___, _______, KC_PSCR, KC_SLCK, KC_PAUSE, ___, ___,         ___, ___, KC_F7, KC_F8, KC_F9, KC_F12, ___,
+        ___, KC_CAPS, KC_INS,  KC_HOME, KC_PGUP,  ___, ___,         ___, ___, KC_F4, KC_F5, KC_F6, KC_F11, ___,
+        ___, _______, KC_DEL,  KC_END,  KC_PGDN,  ___, ___,         ___, ___, KC_F1, KC_F2, KC_F3, KC_F10, ___ 
     ),
     //cursor
     [_C] = LAYOUT(
