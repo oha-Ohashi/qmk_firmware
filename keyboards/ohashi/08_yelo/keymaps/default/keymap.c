@@ -20,6 +20,7 @@
 // Defines names for use in layer keycodes and the keymap
 enum layer_names {
     _eucalyn,
+    _maltron,
     _qwerty,
     _qwe_N,
     _dvorak,
@@ -59,6 +60,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         LCTL_T(KC_Z),  LSFT_T(KC_X), LALT_T(KC_C), LT(_WF,KC_V),LCTL_T(KC_TAB),      LT(_M,KC_BSPC),KC_H,   KC_J,         KC_L,  KC_Q,
         LT(_C,KC_ESC),                            LT(_M, KC_F15), LSFT_T(KC_SPC),      LT(_N,KC_ENT), LT(_M,KC_F16),                 LT(_MD, KC_LGUI) 
     ),
+    [_maltron] = LAYOUT(
+        LT(_C, KC_Q),   KC_P,          KC_Y,         KC_C,        KC_B,             LT(_C, KC_V),  KC_M,   LT(_C, KC_U), KC_Z,   LT(_SK,KC_L),
+        KC_A,           KC_N,          KC_I,         KC_S,        KC_F,             KC_D,          KC_T,   KC_H,         KC_O,   LT(_WF,KC_R),
+        LCTL_T(KC_COMM),LSFT_T(KC_DOT),LALT_T(KC_J), LT(_WF,KC_G),LCTL_T(KC_TAB),   KC_BSPC,       KC_W,   KC_K,         KC_F15, KC_X,  
+        LT(_C,KC_ESC),                            LT(_M, KC_E), LSFT_T(KC_SPC),   LT(_N,KC_ENT), LT(_M,KC_F16),                 LT(_MD, KC_LGUI) 
+    ),
     [_N] = LAYOUT(
         KC_SLSH, _______, KC_DQUO, KC_QUOT, KC_GRAVE,         KC_COMM, KC_7, KC_8, KC_9, KC_PLUS,
         KC_COLN, KC_EQL,  KC_UNDS, KC_MINS, KC_TILD,          KC_DOT,  KC_4, KC_5, KC_6, KC_ASTR,
@@ -88,16 +95,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     //Media
     [_MD] = LAYOUT(
-        ___, KC_PSCR,KC_SLCK, KC_PAUS, ___,       ___, ___, ___,     TO(_qwerty), TO(_eucalyn),
-        ___, KC_INS, KC_HOME, KC_PGUP, ___,       ___, ___, KC_MPRV, KC_MNXT,     KC_VOLU,
-        ___, KC_DEL, KC_END,  KC_PGDN, ___,       ___, ___, KC_MPLY, KC_MUTE,     KC_VOLD,
+        ___, KC_PSCR,KC_SLCK, KC_PAUS, ___,       ___, ___, ___,     ___,      ___, 
+        ___, KC_INS, KC_HOME, KC_PGUP, ___,       ___, ___, KC_MPRV, KC_MNXT, KC_VOLU,
+        ___, KC_DEL, KC_END,  KC_PGDN, ___,       ___, ___, KC_MPLY, KC_MUTE, KC_VOLD,
         ___,           ___, ___,       ___, ___,           ___
     ),
     //Shot Cut
     [_SK] = LAYOUT(
-        ___, ___, ___, ___, ___,       ___, ___, ___, ___, ___,
-        ___, ___, ___, ___, ___,       ___, KC_WHOM, KC_WBAK, KC_WFWD, ___,
-        ___, ___, ___, ___, ___,       ___, ___, ___, ___, ___,
+        TO(_eucalyn),TO(_maltron),TO(_qwerty),___, ___,       ___, ___, ___, ___, ___,
+        ___,         ___,         ___,        ___, ___,       ___, KC_WHOM, KC_WBAK, KC_WFWD, ___,
+        ___,         ___,         ___,        ___, ___,       ___, ___, ___, ___, ___,
         ___,           ___, ___,       ___, ___,           ___
     ),
     //Null
