@@ -55,10 +55,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_LCTL, KC_Z, KC_X, KC_C, KC_V, LT(_qwe_N, KC_B), KC_SPC,       KC_3,    KC_N, KC_M, KC_COMM, KC_DOT,KC_SLSH,  KC_0
     ),*/
     [_eucalyn] = LAYOUT(
-        LT(_C, KC_Z),    KC_W,         KC_B,         KC_F,        LGUI_T(KC_COMM),     LT(_C, KC_M),  KC_R,   LT(_C, KC_D), KC_Y,  LT(_SK,KC_P),
+        LT(_C, KC_Q),    KC_W,         KC_B,         KC_F,        LGUI_T(KC_COMM),     LT(_C, KC_M),  KC_R,   LT(_C, KC_D), KC_Y,  LT(_SK,KC_P),
         KC_A,            KC_O,         KC_E,         KC_U,        KC_I,                KC_G,          KC_T,   KC_K,         KC_N,  LT(_WF,KC_S),
-        LCTL_T(KC_ESC),  LSFT_T(KC_X), LALT_T(KC_C), LT(_WF,KC_V),LCTL_T(KC_DOT),      LT(_M,KC_BSPC),KC_H,   KC_J,         KC_L,  LT(_MD,KC_Q),
-        _______,                                LSFT_T(KC_TAB), LT(_M, KC_SPC),        LT(_N,KC_ENT), LT(_M,KC_F16),               _______
+        LCTL_T(KC_Z),    LSFT_T(KC_X), LALT_T(KC_C), LT(_WF,KC_V),LCTL_T(KC_DOT),      LT(_M,KC_BSPC),KC_H,   KC_J,         KC_L,  LT(_MD,KC_ESC),
+        KC_F15,                                 LT(_M, KC_TAB), LSFT_T(KC_SPC),        LT(_N,KC_ENT), LT(_M,KC_F16),               LALT(KC_GRAVE)
     ),
     [_maltron] = LAYOUT(
         LT(_C, KC_Q),   KC_P,          KC_Y,         KC_C,        LGUI_T(KC_B),      LT(_C, KC_V),  KC_M,   LT(_C, KC_U), KC_Z,   LT(_SK,KC_L),
@@ -67,16 +67,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______,                                   LSFT_T(KC_TAB), LT(_M,KC_SPC),     LT(_N,KC_ENT), LT(_M,KC_F16),                _______
     ),
     [_N] = LAYOUT(
-        KC_Q,    _______, KC_DQUO, KC_QUOT, KC_GRAVE,         KC_COMM, KC_7, KC_8, KC_9, KC_PLUS,
+        _______, _______, KC_DQUO, KC_QUOT, KC_GRAVE,         KC_COMM, KC_7, KC_8, KC_9, KC_PLUS,
         KC_COLN, KC_EQL,  KC_UNDS, KC_MINS, KC_TILD,          KC_DOT,  KC_4, KC_5, KC_6, KC_ASTR,
-        KC_SCLN, _______, _______,_______,  _______,          KC_0,    KC_1, KC_2, KC_3, KC_SLSH,
+        KC_SCLN, _______, _______,_______,  KC_SLSH,          KC_0,    KC_1, KC_2, KC_3, KC_SLSH,
         _______,                  KC_F15, LALT(KC_GRAVE),     KC_DOT, KC_0,             _______
     ),
     //Marks
     [_M] = LAYOUT(
         KC_EXLM, KC_QUES, KC_AMPR, KC_PIPE, KC_BSLS,         KC_COMM, KC_7, KC_8, KC_9, KC_PLUS,
         KC_LPRN, KC_RPRN, KC_LBRC, KC_RBRC, _______,         KC_DOT,  KC_4, KC_5, KC_6, KC_ASTR,
-        KC_LCBR, KC_RCBR, KC_LABK, KC_RABK,  _______,        KC_0,    KC_1, KC_2, KC_3, KC_SLSH,
+        KC_LCBR, KC_RCBR, KC_LABK, KC_RABK, KC_SLSH,         KC_0,    KC_1, KC_2, KC_3, KC_SLSH,
         _______,                  KC_F15, LALT(KC_GRAVE),    KC_DOT, KC_0,             _______
     ),
     //Cursor
