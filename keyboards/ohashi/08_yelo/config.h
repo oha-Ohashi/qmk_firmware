@@ -23,13 +23,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define VENDOR_ID       0x1209
 #define PRODUCT_ID      0x4649
 #define DEVICE_VER      0x0001
-#define MANUFACTURER    e3w2q
-#define PRODUCT         SU120
+#define MANUFACTURER    Ohashi
+#define PRODUCT         Hinoki_bo2
 #define DESCRIPTION     Expandable keyboard with up to 120 keys
 
 /* key matrix size */
 #define MATRIX_ROWS 4*2 //master: 6 rows, slave: 6 rows
-#define MATRIX_COLS 7
+#define MATRIX_COLS 5
 
 /*
  * Keyboard Matrix Assignments
@@ -44,7 +44,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MATRIX_ROW_PINS { F4, F5, F6, F7 }
 //#define MATRIX_COL_PINS { D1, D0, D4, C6, D7, E6, B4/*, B5 ,F4 ,F5*/ }
 //#define MATRIX_COL_PINS { B4, E6, D7, C6, D4, D0, D1}
-#define MATRIX_COL_PINS { D1, D0, D4, C6, D7, E6, B4 }
+#define MATRIX_COL_PINS { D1, D0, D4, C6, D7}
 //#define MATRIX_COL_PINS { F4, F5, F6, F7, B1, B3/*, D7*//*, C6, D4, D0, D1*/ }
 #define UNUSED_PINS
 

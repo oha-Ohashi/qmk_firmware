@@ -55,9 +55,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_LCTL, KC_Z, KC_X, KC_C, KC_V, LT(_qwe_N, KC_B), KC_SPC,       KC_3,    KC_N, KC_M, KC_COMM, KC_DOT,KC_SLSH,  KC_0
     ),*/
     [_eucalyn] = LAYOUT(
-        LT(_C, KC_ESC),    KC_W,         KC_B,         KC_F,        LGUI_T(KC_COMM),     LT(_C, KC_M),  KC_R,   LT(_C, KC_D), KC_Y,  LT(_SK,KC_P),
+        LT(_C, KC_Q),    KC_W,         KC_B,         KC_F,        LGUI_T(KC_COMM),     LT(_C, KC_M),  KC_R,   LT(_C, KC_D), KC_Y,  LT(_SK,KC_P),
         KC_A,            KC_O,         KC_E,         KC_U,        KC_I,                KC_G,          KC_T,   KC_K,         KC_N,  LT(_WF,KC_S),
-        LCTL_T(KC_Z),    LSFT_T(KC_X), LALT_T(KC_C), LT(_WF,KC_V),LCTL_T(KC_DOT),      LT(_M,KC_BSPC),KC_H,   KC_J,         KC_L,  LT(_MD,KC_Q),
+        LCTL_T(KC_Z),    LSFT_T(KC_X), LALT_T(KC_C), LT(_WF,KC_V),LCTL_T(KC_DOT),      LT(_M,KC_BSPC),KC_H,   KC_J,         KC_L,  LT(_MD,KC_ESC),
         KC_F15,                                 LT(_M, KC_TAB), LSFT_T(KC_SPC),        LT(_N,KC_ENT), LT(_M,KC_F16),               LALT(KC_GRAVE)
     ),
     [_maltron] = LAYOUT(
