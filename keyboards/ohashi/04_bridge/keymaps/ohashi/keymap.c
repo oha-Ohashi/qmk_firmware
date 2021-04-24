@@ -47,9 +47,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_LCTL, KC_SCLN, KC_Q,    KC_J,   KC_K, LT(_qwe_N, KC_X), KC_SPC,       KC_3,    KC_B, KC_M, KC_W, KC_V, KC_Z,  KC_0
     ),
     [_qwe_N] = LAYOUT(
-        KC_GRAVE, KC_1,   KC_2,    KC_3,    KC_4,    KC_5,    ___,       ___, ___, ___, ___, ___, ___, ___,
-        KC_ENTER, KC_6,   KC_7,    KC_8,    KC_9,    KC_0,    ___,       ___, ___, ___, ___, ___, ___, ___,
-        ___, ___, ___, ___, ___, ___, ___,                               ___, ___, ___, ___, ___, ___, ___ 
+        KC_GRAVE, KC_1,   KC_2,    KC_3,    KC_4,    KC_5,    _______,       _______, _______, _______, _______, _______, _______, _______,
+        KC_ENTER, KC_6,   KC_7,    KC_8,    KC_9,    KC_0,    _______,       _______, _______, _______, _______, _______, _______, _______,
+        _______, _______, _______, _______, _______, _______, _______,                               _______, _______, _______, _______, _______, _______, ___ 
     ),
     [_qwerty] = LAYOUT(
         KC_TAB,  KC_Q, KC_W, KC_E, KC_R, KC_T,             KC_ESC,       KC_LGUI, KC_Y, KC_U, KC_I,    KC_O,   KC_P,    LT(_O, KC_BSPC), 
