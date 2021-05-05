@@ -16,7 +16,7 @@
 
 #pragma once
 
-#define COMBO_COUNT 1
+#define TAPPING_TERM 200
 
 #define MOUSEKEY_DELAY 10
 #define MOUSEKEY_INTERVAL 12

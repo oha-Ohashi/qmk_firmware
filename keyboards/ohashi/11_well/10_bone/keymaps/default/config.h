@@ -16,8 +16,6 @@
 
 #pragma once
 
-#define COMBO_COUNT 1
-
 #define MOUSEKEY_DELAY 10
 #define MOUSEKEY_INTERVAL 12
 #define MOUSEKEY_MAX_SPEED 2

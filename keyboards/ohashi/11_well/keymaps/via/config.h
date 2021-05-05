@@ -15,8 +15,7 @@
  */
 
 #pragma once
-
-#define COMBO_COUNT 1
+#define DYNAMIC_KEYMAP_LAYER_COUNT 7
 
 #define MOUSEKEY_DELAY 10
 #define MOUSEKEY_INTERVAL 12

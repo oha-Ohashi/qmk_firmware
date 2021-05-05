@@ -56,9 +56,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),*/
     [_eucalyn] = LAYOUT(
         LT(_C, KC_ESC),  LT(_C, KC_W), KC_B,         KC_F,        LGUI_T(KC_COMM),     LT(_C, KC_M),  KC_R,   LT(_C, KC_D), KC_Y,  LT(_SK,KC_P),
-        KC_O,            KC_A,         KC_E,         KC_U,        KC_I,                  KC_G,          KC_T,   KC_K,         KC_N,  LT(_WF,KC_S),
+        KC_A,            KC_O,         KC_E,         KC_U,        KC_I,                  KC_G,          KC_T,   KC_K,         KC_N,  LT(_WF,KC_S),
         LCTL_T(KC_Z),    LSFT_T(KC_X), LALT_T(KC_C), LT(_WF,KC_V),LCTL_T(KC_DOT),        LT(_M,KC_BSPC),KC_H,   KC_J,         KC_L,  LT(_MD,KC_Q),
                                          KC_TAB, LT(_M, KC_F15),  LSFT_T(KC_SPC),        LT(_N,KC_ENT), LT(_M,KC_F16),LALT(KC_GRAVE)
+    ),
+    [_maltron] = LAYOUT(
+        LT(_C, KC_Q),   KC_P,          KC_Y,         KC_C,        LGUI_T(KC_B),      LT(_C, KC_V),  KC_M,   LT(_C, KC_U), KC_Z,   LT(_SK,KC_L),
+        KC_A,           KC_N,          KC_I,         KC_S,        KC_F,              KC_D,          KC_T,   KC_H,         KC_O,   LT(_WF,KC_R),
+        LCTL_T(KC_ESC),LSFT_T(KC_COMM),LALT_T(KC_J), LT(_WF,KC_G),LCTL_T(KC_TAB),    KC_BSPC,       KC_W,   KC_K,         KC_DOT, LT(_MD,KC_X),  
+                                         _______, LSFT_T(KC_TAB), LT(_M,KC_SPC),     LT(_N,KC_ENT), LT(_M,KC_F16), _______
     ),
     [_N] = LAYOUT(
         _______, _______, KC_DQUO, KC_QUOT, KC_GRAVE,         KC_COMM, KC_AMPR, KC_ASTR,KC_LPRN, KC_PLUS,
@@ -89,9 +95,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     //Media
     [_MD] = LAYOUT(
-        _______, KC_PSCR,KC_SLCK, KC_PAUS, _______,       _______, _______, KC_MPRV, KC_MNXT, KC_VOLU,
-        _______, KC_INS, KC_HOME, KC_PGUP, _______,       _______, _______, KC_MPLY, KC_MUTE, KC_VOLD,
-        _______, KC_DEL, KC_END,  KC_PGDN, _______,       _______, _______, _______, _______, _______,
+        _______, KC_PSCR,KC_SLCK, KC_PAUS, _______,       RGB_TOG,          RGB_HUI, RGB_SAI, RGB_VAI, KC_VOLU,
+        _______, KC_INS, KC_HOME, KC_PGUP, _______,       RGB_MODE_FORWARD, RGB_HUD, RGB_SAD, RGB_VAD, KC_VOLD,
+        _______, KC_DEL, KC_END,  KC_PGDN, _______,       RGB_MODE_REVERSE, _______, _______, _______, _______,
         _______,           _______, _______,       _______, _______,           ___
     ),
     //Shot Cut
@@ -109,10 +115,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______,           _______, _______,       _______, _______,           ___
     )
 };
-
-
-const uint16_t PROGMEM test_combo[] = {KC_A, KC_B, COMBO_END};
-combo_t key_combos[COMBO_COUNT] = {COMBO(test_combo, KC_C)};
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {

@@ -1,4 +1,4 @@
-/* Copyright 2019 Ohashi
+/* Copyright 2019 e3w2q
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,14 +16,4 @@
 
 #pragma once
 
-#define COMBO_COUNT 1
-
-#define MOUSEKEY_DELAY 10
-#define MOUSEKEY_INTERVAL 12
-#define MOUSEKEY_MAX_SPEED 2
-#define MOUSEKEY_TIME_TO_MAX 50
-
-#define MOUSEKEY_WHEEL_DELAY 80
-#define MOUSEKEY_WHEEL_INTERVAL 50
-#define MOUSEKEY_WHEEL_MAX_SPEED 1
-#define MOUSEKEY_WHEEL_TIME_TO_MAX 0
+// place overrides here
