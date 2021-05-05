@@ -15,12 +15,15 @@
  */
 #include QMK_KEYBOARD_H
 
+#define ___ _______
+
 // Defines names for use in layer keycodes and the keymap
 enum layer_names {
     _eucalyn,
     _qwerty,
     _qwe_N,
     _N,         //Number Layer
+    _F,         //Functions and Brackets Layer
     _M,         //Marks Layer
     _C,         //Corsur Layer
     _MS,       //Mouse Controlling Layer
@@ -38,50 +41,53 @@ enum custom_keycodes {
 };
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_qwerty] = LAYOUT(
-        KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, LT(_MS, KC_9), LT(_O, KC_0),
-        KC_TAB,  KC_Q,  KC_W, KC_E, KC_R,     KC_T, KC_Y, KC_U, KC_I,    KC_O, 
-        KC_LSFT, KC_A,  KC_S, KC_D, KC_F,     KC_G, KC_H, KC_J, KC_K,    KC_L, 
-        KC_LCTL, KC_Z,  KC_X, KC_C, KC_V,     KC_B, KC_N, KC_M, KC_COMM, KC_UP,
-        KC_ESC,  KC_LGUI,KC_LALT, KC_SPC,      KC_ENT, KC_LEFT, KC_RIGHT, KC_DOWN
+        
+                 KC_Q,  KC_W, KC_E, KC_R, KC_T,                        KC_Y, KC_U, KC_I, KC_O, KC_P, 
+        KC_LSFT, KC_A,  KC_S, KC_D, KC_F, KC_G, KC_0,            KC_1, KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_MINS, 
+                        KC_X, KC_C, KC_V, KC_B, KC_2,            KC_3, KC_N, KC_M, KC_COMM, KC_UP,
+                            KC_LGUI,KC_LALT, KC_ESC, KC_SPC,   KC_ENT, KC_LEFT, KC_RIGHT, KC_DOWN
     ),
-    [_qwe_N] = LAYOUT(
+    /*[_qwe_N] = LAYOUT(
         KC_GRAVE, KC_1,   KC_2,    KC_3,    KC_4,    KC_5,        _______, _______, _______, _______, _______, _______, 
         KC_ENTER, KC_6,   KC_7,    KC_8,    KC_9,    KC_0,        _______, _______, _______, _______, _______, _______, 
         _______, _______, _______, KC_LALT, KC_ESC,  _______,     _______, _______, _______, _______, _______, _______, 
                                             _______, _______,      _______, _______
         ,_______,_______,_______,_______,_______,_______,_______,_______
     ),
-    [_eucalyn] = LAYOUT(
-        KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, LT(_O, KC_0),
-        LT(_O, KC_Q),    KC_W,          KC_B,           KC_F,         KC_COMM,         LT(_C, KC_M), KC_R,  LT(_C, KC_D),  LT(_O, KC_Y), LT(_MS, KC_P), 
-        KC_A,            KC_O,          KC_E,           KC_U,         KC_I,            KC_G,         KC_T,  KC_K,  KC_N, KC_S,    
-        LCTL_T(KC_Z),    LSFT_T(KC_X),  LALT_T(KC_C),   LT(_M, KC_V), LCTL_T(KC_TAB),  KC_BSPC,      KC_H,  KC_J,  KC_L, KC_UP,
-        LT(_MS, KC_ESC), GUI_T(KC_TAB), LT(_M, KC_F15), LSFT_T(KC_SPC),           LT(_M, KC_ENTER), LT(_N, KC_LEFT), KC_RIGHT, KC_DOWN
+    */[_eucalyn] = LAYOUT(
+                          LT(_O, KC_Q), KC_W,         KC_B,           KC_F,   KC_Z,                             LT(_C,KC_M), KC_R,  LT(_C, KC_D),  LT(_O, KC_Y), LT(_MS, KC_P), 
+        LCTL_T(KC_ESC),   KC_A,         KC_O,         KC_E,           KC_U,   KC_I,          KC_LGUI,       KC_UP, KC_G,        KC_T,  KC_K,         KC_N,         KC_S,            KC_MINS,
+                                        LSFT_T(KC_X), LALT_T(KC_C),   KC_V,   LCTL_T(KC_TAB),  KC_SCLN,        KC_DOWN, KC_BSPC,     KC_H,  KC_J,         KC_L,          
+                                              KC_ESC,LT(_M, _______),LT(_N, KC_SPC), SFT_T(KC_F15),         LT(_F, KC_F16),LT(_N, KC_ENTER), LT(_M, KC_LEFT),    KC_RIGHT
     ),
     //number
     [_N] = LAYOUT(
-        KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10,
-        KC_LCBR, KC_RCBR, KC_LABK, KC_RABK, _______,    _______, _______, _______,  KC_F11, KC_F12,
-        KC_LPRN, KC_RPRN, KC_LBRC, KC_RBRC, _______,    _______, KC_CIRC, KC_DLR,  KC_AMPR, KC_PIPE, 
-        KC_COLN, KC_BSLS, KC_SLSH, KC_UNDS, _______,    KC_DEL,  _______, KC_MUTE, KC_MPRV, KC_VOLU,
-        _______, _______, _______, LALT(KC_GRAVE),               LCTL(KC_SPC), KC_MPRV, KC_MNXT, KC_VOLD
+                    _______, _______,_______, _______,_______,         _______,_______, _______,_______, _______,
+        _______, KC_1, KC_2, KC_3, KC_4, KC_5, _______ ,               _______, KC_6, KC_7, KC_8, KC_9, KC_0,         _______,
+                KC_PLUS, KC_MINS, KC_ASTR, KC_SLSH, KC_EQL,            KC_EQL,  KC_PLUS, KC_MINS, KC_ASTR, KC_SLSH, 
+                                    ___, ___, ___, ___,                ___, ___, ___, ___
+    ),
+    //Functions and Brackets
+    [_F] = LAYOUT(
+                KC_F2, KC_F3, KC_F4, KC_F5,        KC_F6,                    KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, 
+        KC_F1, KC_LPRN, KC_RPRN, KC_LBRC, KC_RBRC, KC_SCLN, KC_COLN,    ___, ___,   KC_CIRC, KC_DLR,  KC_AMPR, KC_PIPE,  KC_F12,
+                 ___,      ___,     ___,     ___,     ___,               ___, ___,   ___,   ___,   ___, 
+                                 ___,     ___,     ___,     ___,        ___,     ___,     ___,     ___
     ),
     //marks
     [_M] = LAYOUT(
-        _______, _______, _______, _______, _______,   _______, _______, _______, _______, _______, 
-        KC_GRAVE,KC_BSLS, KC_DOT , KC_SLSH, _______,   KC_PLUS, KC_MINS, KC_ASTR, KC_SLSH, KC_EQL, 
-        KC_SCLN, KC_COLN, KC_UNDS, KC_MINS, KC_TILD,   KC_F5,   KC_HOME, KC_END,  KC_F7,   KC_F8,
-        KC_EXLM, KC_QUES, KC_DQUO, KC_QUOT, _______,   KC_DEL,  KC_WHOM, _______, _______, _______,
-        _______, _______, KC_F16,  KC_F16,                      _______,_______,_______,_______
+                 KC_GRAVE,KC_BSLS, _______, _______, _______,                          _______, _______, _______, _______, _______, 
+        _______, KC_DOT,  KC_COMM, KC_UNDS, KC_MINS, KC_TILD, _______,        _______, KC_HOME, KC_END,  _______, _______, _______, _______,
+                          KC_EXLM, KC_QUES, KC_DQUO, KC_QUOT, _______,        _______, KC_DEL,  _______, _______, _______,
+        _______, _______, _______, _______,                                   _______,_______,_______,_______
     ),  
     //cursor
     [_C] = LAYOUT(
-        _______,_______,_______,_______,_______,            _______,_______,_______,_______,_______,
-        _______, KC_BSPC, KC_UP,     KC_DEL,   _______,     _______, _______, _______, _______, _______, 
-        KC_HOME, KC_LEFT, KC_DOWN,   KC_RIGHT, KC_END,      _______, _______, _______, _______, _______, 
-        _______, _______, _______,  _______,  _______,      _______, _______, _______, KC_UP  , _______, 
-        _______, _______, _______, _______,                                   KC_LEFT, KC_DOWN, KC_RIGHT, _______
-    ),
+                 _______, KC_BSPC, KC_UP,   KC_DEL,   _______,                          _______, _______, _______, _______, _______, 
+        _______, KC_HOME, KC_LEFT, KC_DOWN, KC_RIGHT, KC_END,  _______,        _______, _______, _______, _______, _______,  _______, _______,
+                          _______, KC_PGUP, _______,  _______,  _______,                          _______, _______, _______,  _______,  _______, 
+                                   KC_PGDN, _______, _______, _______,                                    _______, _______, _______, _______
+    )/*,
     //mouse1
     [_MS] = LAYOUT(
         _______, _______, _______, _______, _______,               _______, KC_MS_BTN3, KC_MS_BTN2, KC_MS_BTN1, _______, 
@@ -105,7 +111,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, _______, _______, _______, _______, _______,       _______, _______, _______, _______, _______, _______,
         _______, _______, _______, _______
         ,_______,_______,_______,_______,_______,_______,_______,_______
-    )
+    )*/
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
