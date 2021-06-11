@@ -15,7 +15,10 @@
  */
 
 #pragma once
-#define DYNAMIC_KEYMAP_LAYER_COUNT 7
+
+#define TAPPING_TERM 200
+#define DYNAMIC_KEYMAP_LAYER_COUNT 8
+
 
 #define MOUSEKEY_DELAY 10
 #define MOUSEKEY_INTERVAL 12

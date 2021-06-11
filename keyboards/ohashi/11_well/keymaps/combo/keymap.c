@@ -43,7 +43,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_eucalyn] = LAYOUT(
         LT(_C, KC_ESC),  KC_W,         KC_B,         KC_F,         LGUI_T(KC_COMM),       KC_M,           KC_R,        LT(_C, KC_D), KC_Y,  LT(_MD,KC_P),
         LCTL_T(KC_A),    KC_O,         KC_E,         KC_U,         KC_I,                  KC_G,           KC_T,        KC_K,         KC_N,  LT(_C,KC_S),
-        LT(_MD, KC_Z),   LSFT_T(KC_X), LALT_T(KC_C), LT(_N,KC_V),  LSFT_T(KC_SPC),        LT(_M,KC_BSPC), LT(_N,KC_H),        KC_J,  KC_L,  LT(_RGB,KC_ENT)
+        LT(_MD, KC_Z),   LSFT_T(KC_X), LALT_T(KC_C), LT(_N,KC_V),  LSFT_T(KC_SPC),        LT(_M,KC_ENT), LT(_N,KC_H),        KC_J,  KC_L,  LT(_RGB,KC_BSPC)
     ),
     //Marks
     [_N] = LAYOUT(
